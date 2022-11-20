@@ -1,0 +1,229 @@
+::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+.sliderPrincipal {
+    width: 100vw;
+    height: 41vh;
+    margin-top: 0.5vmax;
+}
+
+.banner {
+    background-image: url(../../images/fetechwal.png);
+    height: 80vmin;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner > h1 {
+    margin: 5vmax;
+    font: 600 2.5vmax "Roboto";
+}
+
+.banner > p {
+    font: 300 1.4vmax "Lucida Sans";
+}
+
+.banner > a > button {
+    margin-bottom: 20vmax;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 0;
+    transition: all 0.5s;
+    width: 9vmax;
+    font: 500 1vmax "Roboto";
+}
+
+.banner > a > button:hover {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+
+.banner::after {
+    content: "";
+    width: 334vh;
+    height: 92vmin;
+    background-color:  #c7d0cc;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    clip-path: polygon(100% 75%, 0% 100%, 100% 100%);
+    max-width: 100%;
+}
+
+.logoFetech {
+    width: auto;
+    margin-inline: 5rem;
+    display: block;
+}
+
+.homeHeading {
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 1.4vmax;
+    border-bottom: 1px solid rgba(21, 21, 21, 0.5);
+    width: 20vmax;
+    padding: 1vmax;
+    margin: 5vmax auto;
+}
+
+.container {
+    display: flex;
+    margin: 2vmax auto;
+    width: 75vw;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.productCard {
+    width: 17vmax;
+    height: 65.8vh;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: rgb(48,48,48);
+    margin: 0.8vmax;
+    transition: all ease-in-out 0.3s;
+    padding-bottom: 0.11vmax;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 80%);
+    border-radius: 2%;
+    border-bottom: 1px solid red;
+}
+
+.contadorPromocao > .OFF {
+    font: 300 1vmax Sans Serif cursive;
+    width: 2vmax;
+    height: 2vmax;
+    background: orange;
+    display: flex;
+    margin: 0 auto;
+}
+
+.OFF {
+    color: green;
+}
+
+.productCard > img {
+    width: 17vmax;
+    height: 15vmax;
+    border-top: 2px solid #a1a1a1;
+    border-bottom: 2px solid #a1a1a1;
+}
+
+.productCard > div {
+    margin: 0.3vmax;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.productCard > div > span {
+    margin: 0.5vmax;
+    font: 300 0.7vmax "Roboto";
+}
+
+.productCard > p {
+    font: 500 1vmax "Arial";
+    margin: 1vmax 0.5vmax;
+    margin-bottom: 0;
+}
+
+.productName {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.productCard > span {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1vmax;
+    margin-left: 0.4vmax;
+}
+
+.productCard > .oldPrice {
+    --bs-text-opacity: 1;
+    color: #6c757d !important;
+    text-decoration: line-through;
+}
+
+.productCard > .productPrice {
+    color: rgba(56, 139, 1, 0.952);
+    margin-left: 1vmax;
+    font: 700 1vmax Arial;
+}
+
+.productCard > .installmmentPrice {
+    color: rgba(56, 139, 1, 0.952);
+}
+
+#product {
+    width: 18vw;
+    height: 74vh;
+}
+
+ #product > .buttomCard {
+    opacity: 0;
+    background-color: #6c757d;
+}
+
+#product:hover > .buttomCard {
+    opacity: 1;
+    border: none;
+    background-color: tomato;
+    color: white;
+    font: 300 0.9vmax "Roboto";
+    width: 93%;
+    margin-left: 0.9vmax;
+    padding: 0.8vmax;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 22%);
+    transition: all ease-in-out 0.5s;
+    transform: scale(1.05);
+}
+
+.productCard:hover {
+    box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+    transform: scale(1.05);
+}
+
+.imagemPapel {
+    width: 100%;
+    border-bottom: 4px solid red;
+}
+ 
+
+@media screen and (max-width: 600px) {
+    .productCard > p {
+        font-size: 1.7vmax;
+    }
+
+    .productCard > div {
+        margin: 0vmax;
+        display: block;
+    }
+
+    .productCard > span {
+        font-size: 1.5vmax;
+    }
+
+    .productCard > div > span {
+        margin: 0 0.5vmax;
+        font: 300 1vmax "Roboto";
+    }
+}

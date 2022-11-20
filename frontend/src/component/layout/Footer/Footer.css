@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    margin-top: 10vmax;
+    padding: 2vmax;
+    background-color: rgb(53, 46, 46);
+    color: white;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 250px;
+    border-radius: 0.5vmax;
+    border-top: 3px solid red;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 80%);
+}
+
+.leftFooter {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leftFooter > h4 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-bottom: 1px solid gray;
+}
+
+.leftFooter > p {
+    text-align: center;
+    margin: 1vmax;
+    font-size: 1vmax;
+}
+
+.leftFooter > p:hover {
+    color: grey;
+}
+
+.leftFooter > img {
+    width: 2vmax;
+    margin: 1vmax;
+    cursor: pointer;
+}
+
+.midFooter {
+    width: 60%;
+    text-align: center;
+}
+
+.midFooter > h1 {
+    cursor: pointer;
+    font: 400 2.2vmax Sans Serif cursive;
+}
+
+.rightFooter {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightFooter > h4 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.4vmax;
+    border-bottom: 1.2px solid gray;
+    margin: 1vmax;
+}
+
+.rightFooter > a {
+    text-decoration: none;
+    font-size: 1vmax;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.rightFooter > a:hover {
+    color: rgb(126, 121, 121);
+}
+
+.emailField {
+    display: grid;
+    text-decoration: none;
+    margin: 1vmax;
+}
+
+.emailField > input {
+    padding: 1vmax;
+    margin-bottom: 0.4vmax;
+}
+
+.novidadeEnvio {
+    font: 300 1vmax "Sans Serif";
+    border-radius: 0.5vmax;
+    background: none;
+    transition: all ease-out 0.5s;
+    text-decoration: none;
+}
+
+.novidadeEnvio:hover {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0 0 0 / 70%);
+    text-decoration: none;
+}
+
+.submitButton {
+    transition: all ease-out 0.5s;
+    border-radius: 0.6vmax;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    transform: scale(1.05);
+    color: white;
+    background: none;
+    background-color: rgb(53, 50, 50);
+    text-decoration: none;
+    box-shadow: 0 0 5px rgba(53 50 50 / 70%);
+}
+
+.submitButton > input {
+    font: 400 1vmax;
+}
+
+.logoFetech {
+    margin: 1vmax;
+    margin-bottom: 1vmax solid gray;
+}
+
+.moreInfo {
+    cursor: pointer;
+}

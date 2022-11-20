@@ -1,0 +1,28 @@
+.buttonLogin {
+    align-self: center;
+    display: flex;
+    height: 3vmax;
+    font: 300 1vmax Sans Serif;
+    border: none;
+    text-align: center;
+}
+
+.buttonLogin > .ButtonLogin {
+    background-color: tomato;
+    border: none;
+    width: 4vmax;
+    height: 2.5vmax;
+    color: white;
+    font: 400 1.1vmax "Roboto";
+    margin-top: 0.3vmax;
+    border-radius: 0.2vmax;
+    margin-top: 1.1vmax;
+    margin: 1vmax;
+}
+
+.buttonLogin > .ButtonLogin:hover {
+    background-color: rgb(39, 37, 37);
+    transition: all 0.7s;
+    color: white;
+    cursor: pointer;
+}
