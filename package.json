@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce",
+  "name": "projetocantina",
   "version": "1.0.0",
   "description": "",
   "main": "backend/server.js",
@@ -8,7 +8,7 @@
     "start": "node backend/server.js",
     "dev": "nodemon backend/server.js"
   },
-  "author": "",
+  "author": "Andre",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
