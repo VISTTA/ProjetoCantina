@@ -3,27 +3,27 @@ const mongoose = require('mongoose');
 const productSchema = mongoose.Schema( {
     name: {
         type: String,
-        required: [true, "Pleaser enter product name"],
+        required: [true, "Por favor, digite o nome do produto."],
         trim: true
     },
     description: {
         type: String,
-        required: [true ,"Please enter product description"]
+        required: [true ,"Por favor, digite a descrição do produto."]
     },
     oldPrice: {
         type: String,
-        required: [true, "Please enter old price product"],
-        maxLength: [15, "Price cannot exceed 8 characters"],
+        required: [true, "Por favor, informe o valor antigo do produto."],
+        maxLength: [15, "O preço não pode exceder mais de 15 caracteres."],
     },
     price: {
         type: String,
-        required: [true, "Please enter product price"],
-        maxLength: [15, "Price cannot exceed 8 characters"]
+        required: [true, "Por favor, informe o preço do produto."],
+        maxLength: [15, "O preço não pode exceder mais de 15 caracteres."]
     },
     installmmentPrice: {
         type: String,
-        required: [true, "Please enter product installmmente Price"],
-        maxLength: [15, "Price canoot exceed 15 characters"],
+        required: [true, "Por favor, informe o valor do produto parcelado."],
+        maxLength: [15, "O preço não pode exceder mais de 15 caracteres."],
     },
     ratings: {
         type: Number,
@@ -43,12 +43,12 @@ const productSchema = mongoose.Schema( {
     ],
     category: {
         type: String,
-        required: [true, "Please enter product category"],
+        required: [true, "Por favor, informe a categoria do produto."],
     },
     Stock: {
         type: Number,
-        required: [true, "Please enter product stock"],
-        maxLength: [4, "Stock cannot exceed 4 characters"],
+        required: [true, "Por favor, informe a quantidade que possui em estoque do produto."],
+        maxLength: [4, "Limite máximo de 4 caracteres para informar o estoque do produto."],
         default: 1
     },
     numOfReviews: {

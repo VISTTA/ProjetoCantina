@@ -5,7 +5,7 @@ const sendToken = require("../utils/jwtToken");
 const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
 const cloudinary = require("cloudinary");
-//Register a User
+//Registro de usuário.
 exports.registerUser = catchAsyncErrors( async (req,res,next) => {
     const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
         folder: "avatars",
@@ -29,15 +29,15 @@ exports.loginUser = catchAsyncErrors ( async (req,res,next) => {
     const { email, password } = req.body;
     //Check if user has given password and email both 
     if(!email || !password) {
-        return next(new ErrorHander ("Please enter Email and Password", 400));
+        return next(new ErrorHander ("Por favor, insira um e-mail ou senha", 400));
     }
     const user = await User.findOne({ email }).select("+password");
     if(!user) {
-        return next(new ErrorHander ("Invalid email or password", 401));
+        return next(new ErrorHander ("E-mail ou senha invalida.", 401));
     }
     const isPasswordMatched = user.comparePassword(password);
     if(!isPasswordMatched) {
-        return next(new ErrorHander ("Invalid email or password", 401));
+        return next(new ErrorHander ("E-mail ou senha invalida", 401));
     }
     sendToken(user, 200, res);
 });
@@ -57,25 +57,25 @@ exports.logout = catchAsyncErrors (async (req, res, next) => {
 exports.forgotPassword = catchAsyncErrors (async (req, res, next) => {
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
-        return next(new ErrorHander ("User not found", 404));
+        return next(new ErrorHander ("Usuário não encontrado", 404));
     }
     //Get Reset Password Token
     const resetToken =  user.getResetPasswordToken();
     await user.save({ validateBeforeSave:false });
 
     const resetPasswordUrl = `${req.protocol}://${req.get("host")}/api/v1/password/reset/${resetToken}`;
-    const message = `Your password reset token is :- \n\n ${ resetPasswordUrl } \n\nIf you have not requested this email then please ignore it`;
+    const message = `Seu token para redefinição de senha é :- \n\n ${ resetPasswordUrl } \n\n Por favor, ignore esta mensagem se a requisição de senha não foi feita por você.`;
     
     try {
         await sendEmail ({
             email: user.email,
-            subject: `Ecommerce Password Recovery`,
+            subject: `Recuperação de senha Cantina`,
             message,
         });
 
         res.status(200).json({
             success: true,
-            message: `Email send to ${user.email} successfully`,
+            message: `Email enviado para ${user.email} com sucesso`,
         });
     } catch (error) {
         user.resetPasswordToken = undefined;
@@ -85,17 +85,17 @@ exports.forgotPassword = catchAsyncErrors (async (req, res, next) => {
         return next(new ErrorHander (error.message, 500));
     };
 });
-//RESET PASSWORD
+//RESETAR SENHA
 exports.resetPassword = catchAsyncErrors (async (req, res, next) => {
-    const resetPasswordToken = crypto.createHash("sha256").update(req.params.token).digest("hex"); //Create Token Hash
+    const resetPasswordToken = crypto.createHash("sha256").update(req.params.token).digest("hex"); //Criando token Hash
     const user = await User.findOne({
         resetPasswordToken, resetPasswordExpire : { $gt: Date.now() },
     });
     if(!user) {
-        return next( ErrorHander("Reset Password Token is invalid or hass been expired",400));
+        return next( ErrorHander("Token de redefinição expirou ou está incorreto.",400));
     };
     if(req.body.password !== req.body.password.confirmPassword ) {
-        return next( ErrorHander("Password does not password",400));
+        return next( ErrorHander("Esta não é a senha correta",400));
     }
     
     user.password = req.body.password;
@@ -106,7 +106,7 @@ exports.resetPassword = catchAsyncErrors (async (req, res, next) => {
 
     sendToken(user, 200, res);
 });
-//GET USER DETAILS
+//Metodo Get para detalhes do usuário
 exports.getUserDetails = catchAsyncErrors(async(req, res, next) => {
     const user = await User.findById(req.user.id);
 
@@ -115,16 +115,16 @@ exports.getUserDetails = catchAsyncErrors(async(req, res, next) => {
         user,
     });
 });
-//UPDATE USER DETAILS
+//UPDATE DETALHES DO USUÁRIO.
 exports.updatePassword = catchAsyncErrors(async(req, res, next) => {
     const user = await User.findById(req.user.id).select("+password");
     const isPasswordMatched = await user.comparePassword(req.body.oldPassword);
 
     if(!isPasswordMatched) {
-        return next( new ErrorHander("Old password is incorret", 400));
+        return next( new ErrorHander("Antiga senha incorreta", 400));
     };
     if(req.body.newPassword !== req.body.confirmPassword) {
-        return next( new ErrorHander("Password does not match", 400));
+        return next( new ErrorHander("Senha incorreta", 400));
     }
 
     user.password = req.body.newPassword;
@@ -132,7 +132,7 @@ exports.updatePassword = catchAsyncErrors(async(req, res, next) => {
 
     sendToken(user, 200, res);
 });
-//UPDATE USER PROFILE
+//UPDATE PERFIL USUÁRIO
 exports.updateProfile = catchAsyncErrors(async(req, res, next) => {
     const newUserData = {
         name: req.body.name,
@@ -162,7 +162,7 @@ exports.getSingleUser = catchAsyncErrors (async (req, res, next) => {
     const user = await User.findById(req.params.id);
 
     if(!user) {
-        return next( new ErrorHander (`User does not exist with id: ${req.params.id}`));
+        return next( new ErrorHander (`Este usuário não existe: ${req.params.id}`));
     }
 
     res.status(200).json({
@@ -191,13 +191,13 @@ exports.deleteUser = catchAsyncErrors(async(req, res, next) => {
     const user = await User.findById(req.params.id);
     //We will remove ordinary later
     if(!user) {
-        return next( new ErrorHander (`User does not exist with id: ${req.params.id}`));
+        return next( new ErrorHander (`Este usuário não existe: ${req.params.id}`));
     }
 
     await user.remove();
 
     res.status(200).json({
         success: true,
-        message: "User Deleted Successfully",
+        message: "Usuário deletado com sucesso.",
     });
 });
