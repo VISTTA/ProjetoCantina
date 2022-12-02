@@ -1,0 +1,51 @@
+.buttonLogin {
+    align-self: center;
+    display: flex;
+    height: 3vmax;
+    font: 300 1vmax Sans Serif;
+    border: none;
+    text-align: center;
+}
+
+.conta {
+    margin-top: 2vmax;
+}
+
+.iconUser {
+    text-align: center;
+    border: none;
+    position: absolute;
+    font-size: 2vmax;
+    margin-inline: -1vmax;
+    top: 4.3%;
+}
+
+.buttonLoginFormUser {
+    display: none;
+}
+
+.buttonLogin > .ButtonLogin {
+    background-color: tomato;
+    border: none;
+    width: 1vmax;
+    height: 1.9vmax;
+    text-align: center;
+    color: white;
+    font: 400 1.1vmax "Roboto";
+    margin-top: 0.3vmax;
+    margin: 1.2vmax;
+    border-radius: 100vmax;
+}
+
+.ButtomLogin > .LoginImage {
+    position: absolute;
+    margin-inline: -1.4%;
+    font-size: 1vmax;
+}
+
+.buttonLogin > .ButtonLogin:hover {
+    background-color: rgb(39, 37, 37);
+    transition: all 0.7s;
+    color: white;
+    cursor: pointer;
+}

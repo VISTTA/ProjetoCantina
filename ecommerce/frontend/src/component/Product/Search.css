@@ -1,0 +1,50 @@
+.searchBox {
+    display: flex;
+    align-items: center;
+}
+
+.searchProduct {
+    border: none;
+    font-size: 2vmax;
+    top: 4.3%;
+    position: absolute;
+    margin-inline: -0.9vmax;
+    color: tomato;
+}
+
+.searchProduct:hover {
+    color: rgba(0, 0, 0, 0.637);
+    transition: .5s;
+}
+
+.searchBox > input[type="text"] {
+    box-shadow: 0 0 5px rgb(0 0 0 / 27%);
+    background-color: white;
+    border: none;
+    color: rgba(0, 0, 0, 0.637);
+    border-radius: 0%;
+    font: 300 1.1vmax cursive;
+    box-sizing: border-box;
+    width: 29vmax;
+    margin: 1vmax;
+    height: 3vmax;
+    border-radius: 2.3vmax;
+    margin-top: 2vmax;
+    padding: 1vmax;
+}
+
+.searchProducts {
+    margin-inline: -11.7%;
+    border-radius: 0%;
+    background-color: rgb(255 255 255);
+    width: 3vmax;
+    border: none;
+    font: 300 1.1vmax "Roboto";
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s;
+    border-radius: 2%;
+    height: 3vmax;
+    margin-top: 1vmax;
+    border-radius: 1.3vmax;
+}

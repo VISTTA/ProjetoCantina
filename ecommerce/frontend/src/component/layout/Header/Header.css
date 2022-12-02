@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    overflow: overlay;
+    background-color: #FFF2A7;
+}
+
+header {
+    height: 58px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07);
+    color: #212529;
+}
+
+.helloUser {
+    width: auto;
+}
+
+.speedDial {
+    position: fixed;
+    right: 3vmax;
+    top: 0.5vmax;
+  }
+  
+  .speedDialIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+  }
+
+.iconProfile {
+    align-items: center;
+}
+
+.nav-area {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 12vmax;
+    /* margin-top: 4.4vmax; */
+    height: 64px;
+    background-color: #D9D9D9;
+    box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08), 0 4px 6px -2px rgba(71, 63, 79, 0.39);
+}
+
+.nav-area > .menu-buttom {
+    border: none;
+    width: 9vmax;
+    height: 3.5vmax;
+    margin-top: 0.5vmax;
+    border-left: 2px solid #ed0000;
+    background: #524b4b;
+    color: #d7d7d7;
+    font: 300 1vmax "Arial";
+    border-radius: 8%;
+    cursor: pointer;
+}
+
+.nav-area > .menu-buttom > span {
+    width: auto;
+}
+
+.Header-Logo {
+    margin-right: 20px;
+    z-index: 1;
+    width: 12vw;
+    margin-top: 5vmax;
+}
+
+.list {
+    color: white;
+    margin-inline: 1.6vmax;
+    font: 100 0.9vmax Arial;
+}
